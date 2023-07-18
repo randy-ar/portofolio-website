@@ -1,0 +1,608 @@
+/************ Custom Font ************/
+@font-face {
+	font-family: Centra;
+	src: url('../font/CentraNo2-Bold.ttf');
+	font-weight: 700;
+}
+@font-face {
+	font-family: Centra;
+	src: url('../font/CentraNo2-Medium.ttf');
+	font-weight: 500;
+}
+@font-face {
+	font-family: Centra;
+	src: url('../font/CentraNo2-Book.ttf');
+	font-weight: 400;
+}
+
+/************ Default Css ************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 75px;
+}
+
+body {
+  font-weight: 400;
+  overflow-x: hidden;
+  position: relative;
+  background-color: #121212 !important;
+  color: #fff !important;
+  font-family: 'Centra', sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+}
+
+p, a, li, button, ul {
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+button {
+  border: 0;
+  background-color: transparent;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+}
+
+@media (min-width:1700px) {
+	main .container {
+		max-width: 100%;
+		padding: 0 150px;
+	}
+}
+
+p.success {
+	color: green;
+}
+
+p.danger {
+	color: red;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #121212;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 10px;
+}
+
+.relative{
+  position: relative;
+}
+/************ Navbar Css ************/
+nav{
+  padding: 20px 80px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  transition: all .3s;
+}
+.scrolled{
+  background-color: #121212;
+}
+.nav-fixed{
+  position: fixed;
+  z-index: 9999;
+}
+nav .logo{
+  width: 18%;
+}
+nav ul{
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+nav ul li a{
+  opacity: .75;
+  color: #fff;
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+}
+nav ul li a:hover{
+  opacity: 1;
+}
+nav .social-media-wrapper{
+  display: flex;
+  gap: 8px;
+}
+
+nav .social-media-wrapper .social-media{
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  margin: 0;
+  border: solid 1px #fff;
+  border-radius: 50%;
+  opacity: .75;
+}
+nav .social-media-wrapper .social-media:hover{
+  opacity: 1;
+}
+nav .social-media-wrapper .social-media:hover a{
+  font-size: 24px;
+}
+nav .social-media-wrapper .social-media a{
+  color: #fff;
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  transition: all .3s;
+}
+
+nav .navmenu{
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+/************ Banner Css ************/
+.banner {
+  margin-top: 0;
+  padding: 100px 0 200px 0;
+  background-image: url('../img/shooting-star-gfa6a461e2_1280.png');
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.banner .banner-container{
+  padding: 20px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 100px;
+}
+.banner .banner-content{  
+  width: 80%;
+}
+.banner .tagline {
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  padding: 8px 10px;
+  background: linear-gradient(90.21deg, rgba(120, 89, 183, 0.5) -5.91%, rgba(74, 47, 189, 0.5) 111.58%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  font-size: 20px;
+  margin-bottom: 16px;
+  display: inline-block;
+}
+.banner h1 {
+  font-size: 65px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  line-height: 1;
+  margin-bottom: 20px;
+  display: block;
+}
+.banner p {
+  color: #B8B8B8;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  line-height: 1.5em;
+  width: 96%;
+}
+.banner a {
+  color: #fff;
+  font-weight: 700;
+  font-size: 20px;
+  margin-top: 60px;
+  letter-spacing: 0.8px;
+  display: flex;
+  align-items: center;
+}
+.banner a i {
+  font-size: 25px;
+  margin-left: 10px;
+  transition: 0.3s ease-in-out;
+  line-height: 1;
+}
+.banner a:hover i {
+  margin-left: 25px;
+}
+.banner img{
+  width: 400px;
+}
+.banner img {
+  animation: updown 3s linear infinite;
+}
+@keyframes updown {
+    0% {
+        transform: translateY(-20px);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
+}
+.txt-rotate > .wrap {
+  border-right: 0.08em solid #666;
+}
+
+/************ Skills Css ************/
+.skill {
+  padding: 0 80px 50px 80px;
+  position: relative;
+}
+.skill-bx {
+  background: #151515;
+  border-radius: 64px;
+  text-align: center;
+  padding: 60px 50px;
+  margin-top: -60px;
+}
+.skill h2 {
+	font-size: 45px;
+	font-weight: 700;
+}
+.skill p {
+  color: #B8B8B8;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  line-height: 1.5em;
+  margin: 14px 0 75px 0;
+}
+.skill-container{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  align-content: center;
+}
+.skill-logo{
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.skill-logo img{
+  width: 100%;
+}
+.bg-white{
+  background-color: #fff;
+  opacity: .9;
+  padding: 10px;
+}
+.background-image-left {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: -4;
+}
+
+/************ Projects Css ************/
+.project {
+  padding: 80px 80px;
+  position: relative;
+  background-color: black;
+}
+.project h2 {
+	font-size: 45px;
+	font-weight: 700;
+  text-align: center;
+}
+.project p {
+  color: #B8B8B8;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  line-height: 1.5em;
+  margin: 14px auto 30px auto;
+  text-align: center;
+  width: 56%;
+}
+.proj-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.proj-imgbx {
+  position: relative;
+  border-radius: 30px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  height: 200px;
+  width: 300px;
+}
+.proj-imgbx img{
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+.proj-imgbx::before {
+  content: "";
+  background: linear-gradient(90.21deg, #00192a -5.91%, #4A2FBD 111.58%);
+  opacity: 0.85;
+  position: absolute;
+  width: 100%;
+  height: 0;
+  transition: 0.4s ease-in-out;
+}
+.proj-imgbx:hover::before {
+  height: 100%;
+}
+.proj-txtx {
+  position: absolute;
+  text-align: center;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.5s ease-in-out;
+  opacity: 0;
+  width: 100%;
+}
+.proj-imgbx:hover .proj-txtx {
+  top: 50%;
+  opacity: 1;
+}
+.proj-txtx a{
+  color: #B8B8B8;
+}
+.proj-txtx a h4 {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  line-height: 1.1em;
+}
+.proj-txtx a span {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 15px;
+  letter-spacing: 0.8px;
+}
+.proj-txtx a span small{
+  font-weight: 300 !important;
+}
+.background-image-right {
+  top: 20%;
+  position: absolute;
+  bottom: 0;
+  width: 35%;
+  right: 0;
+  z-index: -4;
+}
+
+/************ Contact Me ************/
+.contact{
+  padding: 80px 80px;
+}
+.contact h2{
+  font-size: 45px;
+  font-weight: 700;
+  /* text-align: center; */
+}
+.contact .card{
+  padding: 30px;
+  background: rgb(0,25,42);
+  background: linear-gradient(351deg, rgba(0,25,42,1) 0%, rgba(1,8,32,1) 100%);
+  border-radius: 64px;
+  padding: 60px 50px;
+}
+.contact .card .container{
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+}
+.contact .card .content{
+  width: 50%;
+}
+#message-wrapper{
+  width: 50%;
+}
+.contact textarea{
+  border: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  padding: 20px;
+  font-family: Centra, sans-serif;
+}
+.contact button{
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  padding: 8px 30px;
+  color: #fff;
+  font-family: Centra, serif;
+  font-size: 20px;
+  border-radius: 20px;
+  background-color: #128C7E;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .4rem;
+}
+.contact button i{
+  transition: all .3s;
+}
+.contact button:hover i{
+  transform: translateX(.4rem);
+}
+
+/************ Footer Css ************/
+.footer img {
+  width: 26%;
+}
+.footer p {
+  font-weight: 400;
+  font-size: 14px;
+  color: #B8B8B8;
+  letter-spacing: 0.5px;
+  margin-top: 20px;
+}
+
+
+/* ====================== RESPONSIVE ======================== */
+@media (max-width: 980px) {
+  body{
+    width: 100%;
+  }
+  nav{
+    padding: 20px 20px;
+  }
+  nav .navmenu{
+    display: none;
+  }
+
+  .banner{
+    width: 100%;
+    padding: 0 0 0 0;
+    background-position: center center;
+    height: 100vh;
+  }
+  .banner .tagline{
+    font-size: 12px;
+  }
+  .banner h1 {
+    font-size: 30px;
+  }
+  .banner img{
+    width: 200px;
+  }
+  .banner .banner-container{
+    flex-wrap: wrap;
+    padding: 20px;
+    flex-direction: column-reverse;
+    gap: 10px;
+  }
+  .banner .banner-content{
+    width: 100%;
+  }
+  .banner p{
+    font-size: 11px;
+  }
+  .banner a{
+    font-size: 11px;
+    margin-top: 20px;
+  }
+  @keyframes updown {
+    0% {
+        transform: translateY(-10px);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+  }
+  .banner img {
+    animation: updown 3s linear infinite;
+  }
+
+  .skill{
+    padding: 20px;
+  }
+  .skill-bx{
+    padding: 30px 20px;
+  }
+  .skill h2{
+    font-size: 25px;
+  }
+  .skill p{
+    font-size: 11px;
+    margin: 7px 0 30px 0;
+  }
+  .skill-container{
+    gap: 8px;
+  }
+  .skill-logo{
+    width: 30px;
+  }
+
+  .project{
+    padding: 20px;
+  }
+  .project h2{
+    font-size: 25px;
+  }
+  .project p{
+    font-size: 11px;
+    width: 90%;
+  }
+  .proj-container{
+
+  }
+  .proj-imgbx{
+    border-radius: 15px;
+    margin-bottom: 12px;
+    height: auto;
+    width: 40%;
+    aspect-ratio: 16/9;
+  }
+  .proj-txtx a h4{
+    font-size: 11px;
+    line-height: 22px;
+  }
+  .proj-txtx a span {
+    display: block;
+    font-size: 8px;
+    letter-spacing: 0.7px;
+    line-height: 7px;
+  }
+
+  .contact{
+    padding: 20px;
+    font-size: 11px;
+  }
+  .contact h2{
+    font-size: 25px;
+  }
+  .contact .card{
+    border-radius: 32px;
+    padding: 20px 30px;
+  }
+  .contact .card .container{
+    flex-wrap: wrap;
+  }
+  .contact .card .content{
+    width: 100%;
+    display: block;
+  }
+  #message-wrapper{
+    width: 100%;
+    display: block;
+  }
+  .contact button{
+    padding: 4px 15px;
+    font-size: 12px;
+    bottom: -10px;
+    right: -10px;
+  }
+}
