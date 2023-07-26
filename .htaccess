@@ -6,4 +6,5 @@ RewriteRule ^index.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
+php_value session.auto_start 1
 # END WordPress

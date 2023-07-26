@@ -19,6 +19,7 @@ if(isset($_SESSION['failed'])){
         </div>
     </div>
     ';
+    session_unset();
 }
 ?>
 <div class="row justify-content-center mt-5">

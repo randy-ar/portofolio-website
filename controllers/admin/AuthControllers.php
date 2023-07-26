@@ -1,14 +1,28 @@
 <?php
 class AuthController{
-    public static function viewLogin(){ 
-        require $_SERVER['DOCUMENT_ROOT'] . '/views/admin/auth/login.php';
+    public $root;
+    public function __construct()
+    {
+        $this->root = $_SERVER['DOCUMENT_ROOT'];
     }
-    public static function login(){
+
+    public function viewLogin(){ 
+        require $this->root. '/views/admin/auth/login.php';
+    }
+
+    public function login(){
         if(isset($_POST['email'])){
-            if(!empty($_POST['email'])){
-                require $_SERVER['DOCUMENT_ROOT'] . '/views/admin/dashboard.php';
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+            if(!empty($email)){
+                if($email == 'admin@gmail.com' && $password == '12341234'){
+                    return header('Location: /admin/dashboard');
+                }else{
+                    $_SESSION['failed'] = "Login gagal dilakukan, periksa kembali akun anda.";
+                    return header('Location: ' . $_SERVER['HTTP_REFERER']);
+                }
             }else{
-                $_GET['failed'] = "Email tidak boleh kosong";
+                $_SESSION['failed'] = "Isian Email tidak boleh kosong.";
                 return header('Location: ' . $_SERVER['HTTP_REFERER']);
             }
         }
