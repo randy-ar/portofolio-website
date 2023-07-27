@@ -169,6 +169,34 @@ nav .navmenu{
   gap: 2.5rem;
 }
 
+nav .nav-toggler{
+  color: white;
+  font-size: 22px;
+  border: 1px solid;
+  border-color: #ffffffcc;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  transition: all .3s; 
+  display: none;
+}
+
+nav .nav-toggler:hover{
+  border-color: #fff;
+  font-size: 24px;
+}
+
+#navmenu-top{
+  transition: all .4s;
+}
+
+.toggle-nav{
+  right: 0 !important;
+}
+
 /************ Banner Css ************/
 .banner {
   margin-top: 0;
@@ -474,10 +502,53 @@ nav .navmenu{
     width: 100%;
   }
   nav{
-    padding: 20px 20px;
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 16px;
   }
-  nav .navmenu{
-    display: none;
+  nav .logo{
+    width: 40%;
+    display: flex;
+    align-items: center;
+  }
+  #navmenu-top{
+    display: block;
+    position: fixed;
+    width: 80%;
+    height: min-content;
+    top: 0;
+    right: -110%;
+    background-color: #121212;
+    padding: 18px 16px;
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+  }
+
+  #navmenu-top button{
+    margin-bottom: 20px;
+  }
+
+  #navmenu-top ul{
+    margin-left: 16px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    display: flex;
+    height: min-content;
+    flex-direction: column;
+    gap: 20px;
+
+  }
+
+  nav .nav-toggler{
+    display: flex;
+    font-size: 17px;
+    width: 35px;
+    height: 35px;
+  }
+  nav .nav-toggler:hover{
+    font-size: 20px;
   }
 
   .banner{
@@ -531,6 +602,7 @@ nav .navmenu{
   }
   .skill-bx{
     padding: 30px 20px;
+    border-radius: 16px;
   }
   .skill h2{
     font-size: 25px;

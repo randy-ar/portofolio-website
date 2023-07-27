@@ -3,6 +3,12 @@ $(function () {
     var $nav = $(".nav-fixed");
     $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.outerHeight());
   });
+  $('#nav-toggler').on('click', function (){
+    $('#navmenu-top').addClass('toggle-nav');
+  });
+  $('#nav-close').on('click', function (){
+    $('#navmenu-top').removeClass('toggle-nav');
+  });
   // Smooth scroll function
   sections  = $('article');
   for(ind in sections){

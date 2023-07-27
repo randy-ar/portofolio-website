@@ -13,7 +13,13 @@
       <a href="#" class="logo">
         <img src="assets/img/logo.png" alt="logo">
       </a>
-      <div class="navmenu">
+      <button class="nav-toggler" id="nav-toggler">
+        <i class="ri-apps-2-line"></i>
+      </button>
+      <div class="navmenu" id="navmenu-top">
+        <button class="nav-toggler" id="nav-close">
+          <i class="ri-close-line"></i>
+        </button>
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#skills">Skill</a></li>
