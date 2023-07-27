@@ -21,9 +21,10 @@
           <i class="ri-close-line"></i>
         </button>
         <ul>
+          <li><a href="/login">Login</a></li>
           <li><a href="#home">Home</a></li>
           <li><a href="#skills">Skill</a></li>
-          <li><a href="#projects">Projects</a></li>
+          <li><a href="#projects">Projects</a></li>  
         </ul>
         <div class="social-media-wrapper">
           <div class="social-media">
@@ -192,7 +193,7 @@
       </a>
       <div class="navmenu">
         <ul>
-          <li><a href="#home">Home</a></li>
+          <li><a href="http://localhost/login">Home</a></li>
           <li><a href="#skills">Skill</a></li>
           <li><a href="#projects">Projects</a></li>
         </ul>

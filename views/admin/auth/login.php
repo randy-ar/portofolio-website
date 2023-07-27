@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <style>a{
+            text-decoration:none;
+            color:white;
+    }
+            a:hover{
+                color:black;
+            }
+
+</style>
+
 </head>
 <body class="bg-dark text-light">
 
@@ -39,7 +49,9 @@ if(isset($_SESSION['failed'])){
                         <input type="password" name="password" id="password" class="form-control">
                     </div>
                 </div>
+
                 <div class="card-footer text-end bg-dark text-light">
+                    <button type="submit" class="btn btn-outline-light"><a class=".link-unstyled"  href="/">Kembali</a></button>
                     <button type="submit" class="btn btn-outline-light">Submit</button>
                 </div>
             </form>
