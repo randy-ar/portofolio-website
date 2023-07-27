@@ -1,12 +1,25 @@
 <?php
 
-$request = $_SERVER['REQUEST_URI'];
+$request = $_SERVER['REDIRECT_URL'];
+// var_dump($_SERVER);
+// die;
 $root = $_SERVER['DOCUMENT_ROOT'];
 $viewDir = '/views/';
 $viewHomeDir = '/views/home/';
 $viewAdminDir = '/views/admin/';
 
-require $root.'/controllers/admin/AuthControllers.php';
+function includeDir($path) {
+    $dir      = new RecursiveDirectoryIterator($path);
+    $iterator = new RecursiveIteratorIterator($dir);
+    foreach ($iterator as $file) {
+        $fname = $file->getFilename();
+        if (preg_match('%\.php$%', $fname)) {
+            include($file->getPathname());
+        }
+    }
+}
+
+includeDir($root.'/controllers');
 
 switch ($request) {
     case '':
@@ -14,17 +27,57 @@ switch ($request) {
         require __DIR__ . $viewHomeDir . 'index.php';
         break;
 
-    // case '/views/users':
-    //     require __DIR__ . $viewDir . 'users.php';
-    //     break;
-
     case '/login':
-        AuthController::viewLogin();
+        $controller = new AuthController();
+        $controller->viewLogin();
         break;
     
     case '/admin/login':
-        AuthController::login();
+        $controller = new AuthController();
+        $controller->login();
         break;
+
+    case '/admin/dashboard':
+        $controller = new DashboardController();
+        $controller->index();
+        break;
+
+    case '/admin/skills':
+        $controller = new SkillsController();
+        $controller->index();
+        break;
+
+    case '/admin/skills/create':
+        $controller = new SkillsController();
+        $controller->create();
+        break;
+
+    case '/admin/skills/store':
+        $controller = new SkillsController();
+        $controller->store();
+        break;
+
+    case '/admin/skills/edit':
+        if(isset($_GET['id'])){
+            $controller = new SkillsController();
+            $controller->edit();
+        }
+        break;
+    
+    case '/admin/skills/update':
+        if(isset($_GET['id'])){
+            $controller = new SkillsController();
+            $controller->update();
+        }
+        break;
+    
+    case '/admin/skills/delete':
+        if(isset($_GET['id'])){
+            $controller = new SkillsController();
+            $controller->delete();
+        }
+        break;
+        
 
     default:
         // http_response_code(404);
