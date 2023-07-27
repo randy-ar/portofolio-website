@@ -1,7 +1,7 @@
 <?php
 
-$request = $_SERVER['REDIRECT_URL'];
-// var_dump($_SERVER);
+$request = explode("?", $_SERVER['REQUEST_URI'])[0];
+// var_dump($request);
 // die;
 $root = $_SERVER['DOCUMENT_ROOT'];
 $viewDir = '/views/';

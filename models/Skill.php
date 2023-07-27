@@ -76,7 +76,9 @@ class Skill{
     $row = mysqli_fetch_row($result);
     do{
       list($id, $name, $image) = $row;
-      array_push($list, new Skill($id, $name, $image));
+      if(!empty($id)){
+        array_push($list, new Skill($id, $name, $image));
+      }
     }
     while($row = mysqli_fetch_row($result));
 
