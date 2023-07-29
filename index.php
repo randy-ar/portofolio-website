@@ -47,6 +47,28 @@ switch ($request) {
         $controller->index();
         break;
 
+    case '/admin/sosmed':
+        $controller = new SosmedController();
+        $controller->index();
+        break;
+
+    case '/admin/sosmed/create':
+        $controller = new SosmedController();
+        $controller->index();
+        break;
+
+    case '/admin/sosmed/store':
+        $controller = new SosmedController();
+        $controller->store();
+        break;
+
+    case '/admin/sosmed/edit':
+        if(isset($_GET['id'])){
+            $controller = new SosmedController();
+            $controller->edit();
+        }
+        break;
+            
     case '/admin/skills/create':
         $controller = new SkillsController();
         $controller->create();
@@ -63,7 +85,14 @@ switch ($request) {
             $controller->edit();
         }
         break;
-    
+
+    case '/admin/sosmed/update':
+        if(isset($_GET['id'])){
+            $controller = new SosmedController();
+            $controller->update();
+        }
+        break;
+
     case '/admin/skills/update':
         if(isset($_GET['id'])){
             $controller = new SkillsController();

@@ -10,15 +10,21 @@
           <a class="nav-link active" aria-current="page" href="#">Basic Information</a>
           </li>
           <li class="nav-item">
-          <a class="nav-link" href="#">Social Media</a>
+          <a class="nav-link" href="/admin/sosmed">Social Media</a>
           </li>
           <li class="nav-item">
           <a class="nav-link" href="/admin/skills">Skills</a>
           </li>
           <li class="nav-item">
-          <a class="nav-link">Portofolio</a>
+          <a class="nav-link" href="#">Portofolio</a>
           </li>
+        </ul>
       </ul>
+      <ul class="navbar-nav">
+            <li class="nav-item ms-auto">
+            <button type="button" class="btn btn-outline-danger" href="/">Log Out</button>
+            </li>
+          </ul>
       </div>
   </div>
 </nav>
