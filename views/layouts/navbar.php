@@ -1,3 +1,10 @@
+<style>
+a {
+  text-decoration: none !important;
+  color:white;
+}
+</style>
+
 <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark" data-bs-theme="dark">
   <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,7 +29,7 @@
       </ul>
       <ul class="navbar-nav">
             <li class="nav-item ms-auto">
-            <button type="button" class="btn btn-outline-danger" href="/">Log Out</button>
+            <button type="button" class="btn btn-outline-danger"><a href="/" >Log Out</a></button>
             </li>
           </ul>
       </div>

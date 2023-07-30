@@ -17,29 +17,14 @@
                     <div class="row">
                         <div class="col-6">
                             <h4>Social Media</h4>
-                        </div>
-                        <div class="col-6 text-md-end">
-                            <a href="/admin/sosmed/create" class="btn btn-outline-light">Fill Form <i class="ri-add-fill"></i></a>
-                        </div>
+
                     </div>
                 </div>
                 <div class="card-body">
                 <table class="table table-bordered table-responsive table-stripped table-dark table-hover w-100" style="white-space: nowrap;">
                 <tr>
                     <th width="1%">No</th>
-                    <th>
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Pilih nama Sosial Media
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><button class="dropdown-item" type="button">Twitter</button></li>
-                            <li><button class="dropdown-item" type="button">Instagram</button></li>
-                            <li><button class="dropdown-item" type="button">Facebook</button></li>
-                        </ul>
-                        </div>
-                    </th>
-                    <th>Icon</th>
+                    <th>Platform</th>
                     <th>Link</th>
                     <th>Action</th>
                 </tr>
@@ -51,7 +36,7 @@
                         echo '
                         <tr>
                             <td widtd="1%">'.$no.'</td>
-                            <td>'.$sosmed->name.'</td>
+                            <td>'.$sosmed->nama.'</td>
                             <td><img src="'.$sosmed->getImage().'" style="width: 100px;"></td>
                             <td class="text-center">
                                 <a href="/admin/sosmed/edit?id='.$sosmed->id.'" class="btn btn-outline-success">Edit <i class="ri-edit-box-line"></i></a>

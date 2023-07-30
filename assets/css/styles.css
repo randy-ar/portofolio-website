@@ -100,9 +100,6 @@ p.danger {
   position: relative;
 }
 /************ Navbar Css ************/
-navbar.nava{
-  text-align: 800px;
-}
 nav{
   padding: 20px 80px;
   display: flex;
