@@ -37,7 +37,7 @@
                         <tr>
                             <td widtd="1%">'.$no.'</td>
                             <td>'.$sosmed->nama.'</td>
-                            <td><img src="'.$sosmed->getImage().'" style="width: 100px;"></td>
+                            <td>'.$sosmed->link.'</td>
                             <td class="text-center">
                                 <a href="/admin/sosmed/edit?id='.$sosmed->id.'" class="btn btn-outline-success">Edit <i class="ri-edit-box-line"></i></a>
                                 <a href="/admin/sosmed/delete?id='.$sosmed->id.'" class="btn btn-outline-danger" onclick="return confirm(`Hapus data ini? data yang telah dihapus tidak dapat dikembalikan.`);">Delete <i class="ri-delete-bin-2-line"></i></a>
