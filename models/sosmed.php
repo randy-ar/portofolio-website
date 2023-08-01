@@ -49,12 +49,14 @@ class sosmed{
     $conn = (new Model)->connect();
 
     $data['Nama'] = (!empty($data['Nama'])) ? $data['Nama'] : $this->nama;
+    $data['Link'] = (!empty($data['Link'])) ? $data['Link'] : $this->link;
     $data['Icon'] = (!empty($data['Icon'])) ? $data['Icon'] : $this->icon;
 
-    $SQL = "UPDATE `sosial_media` SET `Nama` = '".$data['Nama']."', `Icon` = '".$data['Icon']."' WHERE id = ".$this->id;
+    $SQL = "UPDATE `sosial_media` SET `Nama` = '".$data['Nama']."', `Link` = '".$data['Link']."' WHERE id = ".$this->id;
     mysqli_query($conn, $SQL);
 
     $this->icon = $data['Icon'];
+    $this->link = $data['Link'];
     $this->nama = $data['Nama'];
 
   }
