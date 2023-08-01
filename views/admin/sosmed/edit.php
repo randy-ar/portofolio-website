@@ -12,7 +12,7 @@
 <?php 
   require_once $_SERVER['DOCUMENT_ROOT'].'/models/sosmed.php';
   $id = $_GET['id'];
-  $skill = sosmed::find($id);
+  $sosmed = sosmed::find($id);
 ?>
 <div class="container">
   <div class="row justify-content-center">
@@ -24,20 +24,15 @@
         <form action="/admin/sosmed/update?id=<?php echo $sosmed->id ?>" method="post" enctype="multipart/form-data">
         <div class="card-body">
           <div class="mb-3 text-center">
-            <img style="width: 100px;" src="<?php echo $sosmed->getImage() ?>" alt="<?php echo $sosmed->Nama ?>" class="mb-3">
+            <img style="width: 100px;" src="<?php echo $sosmed->getImage() ?>" alt="<?php echo $sosmed->nama ?>" class="mb-3">
           </div>
           <div class="mb-3">
             <label for="name" class="form-label">Name</label>
-            <input type="text" value="<?php echo $sosmed->name ?>" name="name" id="name" class="form-control">
+            <input type="text" value="<?php echo $sosmed->nama ?>" name="name" id="name" class="form-control" readonly>
           </div>
           <div class="mb-3">
-            <label for="image" class="form-label">Link</label>
-            <input type="file" name="image" id="image" class="form-control">
-          </div>
-        </div>
-        <div class="mb-3">
-            <label for="image" class="form-label">Icon</label>
-            <input type="file" name="image" id="image" class="form-control">
+            <label for="Link" class="form-label">Link</label>
+            <input type="text" value="<?php echo $sosmed->link ?>" name="Link" id="Link" class="form-control">
           </div>
         </div>
         <div class="card-footer text-end">

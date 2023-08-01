@@ -18,6 +18,7 @@ class SosmedController{
   }
   public function store(){
     $nama = isset($_POST['Nama']) ? $_POST['Icon'] : null;
+    $link = isset($_POST['Link']) ? $_POST['Link'] : null;
     $icon = isset($_FILES['Icon']) ? $_FILES['Icon'] : null;
     // var_dump($nama, $icon, $_FILES); die;
     if(!empty($icon)){
@@ -26,8 +27,9 @@ class SosmedController{
       $dir = 'assets/img/logo/';
       $upload = move_uploaded_file($filePath, $dir.$fileName);
       if($upload){
-        Skill::create([
-          'Nama' => $name,
+        sosmed::create([
+          'Nama' => $nama,
+          'Link' => $link,
           'Icon' =>  $dir.$fileName
         ]);
         return header('Location: /admin/sosmed');
@@ -39,10 +41,11 @@ class SosmedController{
   public function update(){
     $id = isset($_GET['id']) ? $_GET['id'] : null;
     if(!empty($id)){
-      $skill = Skill::find($id);
+      $sosmed = sosmed::find($id);
       // var_dump($skill); die;
-      if(!empty($skill)){
-        $nama = isset($_POST['Nama']) ? $_POST['Nama'] : $sosmed->name;
+      if(!empty($sosmed)){
+        $nama = isset($_POST['Nama']) ? $_POST['Nama'] : $sosmed->nama;
+        $link = isset($_POST['Link']) ? $_POST['Link'] : $sosmed->link;
         $icon = isset($_FILES['Icon']) ? $_FILES['Icon'] : null;
         
         $sosmedIcon = $sosmed->icon;
@@ -63,6 +66,7 @@ class SosmedController{
 
         $sosmed->update([
           'Nama' => $nama,
+          'Link' => $link,
           'Icon' => $sosmedImage
         ]);
       }
