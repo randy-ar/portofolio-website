@@ -46,11 +46,48 @@ switch ($request) {
         $controller = new SkillsController();
         $controller->index();
         break;
+        
 
     case '/admin/sosmed':
         $controller = new SosmedController();
         $controller->index();
         break;
+    
+    case '/admin/porto_folio':
+        $controller = new porto_folioController();
+        $controller->index();
+        break;    
+    
+    case '/admin/porto_folio/create':
+        $controller = new porto_folioController();
+        $controller->index();
+        break;    
+
+    case '/admin/porto_folio/store':
+        $controller = new porto_folioController();
+        $controller->store();
+        break;
+
+    case '/admin/porto_folio/edit':
+        if(isset($_GET['id'])){
+            $controller = new porto_folioController();
+            $controller->edit();
+        }
+        break;
+
+        case '/admin/porto_folio/update':
+            if(isset($_GET['id'])){
+                $controller = new porto_folioController();
+                $controller->update();
+            }
+            break;
+        
+        case '/admin/porto_folio/delete':
+            if(isset($_GET['id'])){
+                $controller = new porto_folioController();
+                $controller->delete();
+            }
+            break;
 
     case '/admin/sosmed/create':
         $controller = new SosmedController();

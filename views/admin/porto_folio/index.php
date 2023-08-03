@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skills</title>
+    <title>PortoFolio</title>
     <?php include $_SERVER['DOCUMENT_ROOT'].'/views/layouts/head.php' ?>
 </head>
 <body class="bg-dark text-light">
@@ -19,7 +19,7 @@
                             <h4>Portifolio</h4>
                         </div>
                         <div class="col-6 text-md-end">
-                            <a href="/admin/skills/create" class="btn btn-outline-light">Create <i class="ri-add-fill"></i></a>
+                            <a href="/admin/porto_folio/create" class="btn btn-outline-light">Create <i class="ri-add-fill"></i></a>
                         </div>
                     </div>
                 </div>
@@ -32,7 +32,7 @@
                     <th>Action</th>
                 </tr>
                 <?php
-                    require_once $_SERVER['DOCUMENT_ROOT'].'/models/Skill.php';
+                    require_once $_SERVER['DOCUMENT_ROOT'].'/models/porto_folio.php';
                     $list_skill = Skill::all();
                     $no = 1;
                     foreach ($list_skill as $skill) {

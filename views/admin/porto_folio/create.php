@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Create Skills</title>
+  <title>Create portofolio</title>
   <?php include $_SERVER['DOCUMENT_ROOT'].'/views/layouts/head.php' ?>
 </head>
 <body class="bg-dark text-light">
@@ -14,7 +14,7 @@
     <div class="col-10 mt-5">
       <div class="card text-bg-dark">
         <div class="card-header">
-          <h4>Create Skill</h4>
+          <h4>Create Portofolio</h4>
         </div>
         <form action="/admin/skills/store" method="post" enctype="multipart/form-data">
         <div class="card-body">

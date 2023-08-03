@@ -1,6 +1,6 @@
 <?php 
 
-require $_SERVER['DOCUMENT_ROOT'].'/models/Model.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/models/Model.php';
 
 class Skill{
   public $id, $name, $image;

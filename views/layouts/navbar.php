@@ -23,7 +23,7 @@ a {
           <a class="nav-link" href="/admin/skills">Skills</a>
           </li>
           <li class="nav-item">
-          <a class="nav-link" href="#">Portofolio</a>
+          <a class="nav-link" href="/admin/porto_folio">Portofolio</a>
           </li>
         </ul>
       </ul>
