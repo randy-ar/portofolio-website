@@ -13,18 +13,21 @@ a {
       <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
       <a class="navbar-brand" href="#">PORTOFOLIO PANEL</a>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Basic Information</a>
-          </li>
-          <li class="nav-item">
-          <a class="nav-link" href="/admin/sosmed">Social Media</a>
-          </li>
-          <li class="nav-item">
-          <a class="nav-link" href="/admin/skills">Skills</a>
-          </li>
-          <li class="nav-item">
-          <a class="nav-link" href="#">Portofolio</a>
-          </li>
+        <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#">Basic Information</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link active" href="/admin/sosmed">Social Media</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link active" href="/admin/skills">Skills</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link active" href="#">Portofolio</a>
+        </li>
         </ul>
       </ul>
       <ul class="navbar-nav">

@@ -20,7 +20,7 @@ class SkillsController{
     $name = isset($_POST['name']) ? $_POST['name'] : null;
     $image = isset($_FILES['image']) ? $_FILES['image'] : null;
     // var_dump($name, $image, $_FILES); die;
-    if(!empty($image)){
+    if(!empty($image['size'])){
       $filePath = $image['tmp_name'];
       $fileName = $image['name'];
       $dir = 'assets/img/logo/';
@@ -48,11 +48,12 @@ class SkillsController{
         $skillImage = $skill->image;
       // var_dump($image, $_FILES); die;
 
-        if(!empty($image)){
+        if(!empty($image['size'])){
           if(!empty($skill->getFileImage())){
             unlink($skill->getFileImage());
           }
           $filePath = $image['tmp_name'];
+          // var_dump($filePath); die;
           $fileName = $image['name'];
           $dir = 'assets/img/logo/';
           $upload = move_uploaded_file($filePath, $dir.$fileName);

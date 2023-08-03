@@ -9,11 +9,6 @@
 <body class="bg-dark text-light">
 <?php include $_SERVER['DOCUMENT_ROOT'].'/views/layouts/navbar.php' ?>
 
-<?php 
-  require_once $_SERVER['DOCUMENT_ROOT'].'/models/sosmed.php';
-  $id = $_GET['id'];
-  $sosmed = sosmed::find($id);
-?>
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-10 mt-5">
@@ -27,12 +22,16 @@
             <img style="width: 100px;" src="<?php echo $sosmed->getImage() ?>" alt="<?php echo $sosmed->nama ?>" class="mb-3">
           </div>
           <div class="mb-3">
-            <label for="name" class="form-label">Name</label>
-            <input type="text" value="<?php echo $sosmed->nama ?>" name="name" id="name" class="form-control" readonly>
+            <label for="Nama" class="form-label">Name</label>
+            <input type="text" value="<?php echo $sosmed->nama ?>" name="Nama" id="Nama" class="form-control">
           </div>
           <div class="mb-3">
             <label for="Link" class="form-label">Link</label>
             <input type="text" value="<?php echo $sosmed->link ?>" name="Link" id="Link" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label for="Icon" class="form-label">Icon</label>
+            <input type="file" name="Icon" id="Icon" class="form-control">
           </div>
         </div>
         <div class="card-footer text-end">

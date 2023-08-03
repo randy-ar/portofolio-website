@@ -8,23 +8,30 @@ class SosmedController{
     $this->root = $_SERVER['DOCUMENT_ROOT'];
   }
   public function index(){
-    return require $this->root.'/views/admin/sosmed/index.php';
+    $list_sosmed = sosmed::all();
+    include($this->root.'/views/admin/sosmed/index.php');
   }
   public function create(){
     return require $this->root.'/views/admin/sosmed/create.php';
   }
   public function edit(){
-    return require $this->root.'/views/admin/sosmed/edit.php';
+    $id = $_GET['id'];
+    if(!empty($id)){
+      $sosmed = sosmed::find($id);
+      include $this->root.'/views/admin/sosmed/edit.php';
+    }else{
+      return header('Location: /admin/sosmed/');
+    }
   }
   public function store(){
-    $nama = isset($_POST['Nama']) ? $_POST['Icon'] : null;
+    $nama = isset($_POST['Nama']) ? $_POST['Nama'] : null;
     $link = isset($_POST['Link']) ? $_POST['Link'] : null;
     $icon = isset($_FILES['Icon']) ? $_FILES['Icon'] : null;
-    // var_dump($nama, $icon, $_FILES); die;
-    if(!empty($icon)){
-      $filePath = $icon['tmp_Nama'];
-      $fileName = $icon['Nama'];
-      $dir = 'assets/img/logo/';
+    // var_dump($icon); die;
+    if(!empty($icon['size'])){
+      $filePath = $icon['tmp_name'];
+      $fileName = $icon['name'];
+      $dir = 'assets/img/logo-sosmed/';
       $upload = move_uploaded_file($filePath, $dir.$fileName);
       if($upload){
         sosmed::create([
@@ -34,8 +41,9 @@ class SosmedController{
         ]);
         return header('Location: /admin/sosmed');
       }
+    }else{
+      return header('Location: /admin/sosmed/create');
     }
-    return header('Location: /admin/sosmed/create');
   }
 
   public function update(){
@@ -46,18 +54,18 @@ class SosmedController{
       if(!empty($sosmed)){
         $nama = isset($_POST['Nama']) ? $_POST['Nama'] : $sosmed->nama;
         $link = isset($_POST['Link']) ? $_POST['Link'] : $sosmed->link;
-        $icon = isset($_FILES['Icon']) ? $_FILES['Icon'] : null;
+        $icon = isset($_FILES['Icon']) ? $_FILES['Icon'] : $sosmed->icon;
         
-        $sosmedIcon = $sosmed->icon;
-      // var_dump($image, $_FILES); die;
+        $sosmedImage = $sosmed->icon;
+        // var_dump($sosmedImage, $_FILES); die;
 
-        if(!empty($icon)){
+        if(!empty($icon['size'])){
           if(!empty($sosmed->getFileImage())){
             unlink($sosmed->getFileImage());
           }
-          $filePath = $icon['tmp_Nama'];
-          $fileName = $icon['Nama'];
-          $dir = 'assets/img/logo/';
+          $filePath = $icon['tmp_name'];
+          $fileName = $icon['name'];
+          $dir = 'assets/img/logo-sosmed/';
           $upload = move_uploaded_file($filePath, $dir.$fileName);
           if($upload){
             $sosmedImage = $dir.$fileName;

@@ -19,17 +19,17 @@
         <form action="/admin/sosmed/store" method="post" enctype="multipart/form-data">
         <div class="card-body">
           <div class="mb-3">
-            <label for="name" class="form-label">Name</label>
-            <input type="text" name="name" id="name" class="form-control">
+            <label for="Nama" class="form-label">Name</label>
+            <input type="text" name="Nama" id="Nama" class="form-control">
           </div>
           <div class="mb-3">
-            <label for="image" class="form-label">Link</label>
-            <input type="file" name="image" id="image" class="form-control">
+            <label for="Link" class="form-label">Link</label>
+            <input type="text" name="Link" id="Link" class="form-control">
           </div>
-        </div>
-        <div class="mb-3">
-            <label for="image" class="form-label">Icon</label>
-            <input type="file" name="image" id="image" class="form-control">
+          <div class="mb-3">
+              <label for="Icon" class="form-label">Icon</label>
+              <input type="file" name="Icon" id="Icon" class="form-control">
+            </div>
           </div>
         </div>
         <div class="card-footer text-end">

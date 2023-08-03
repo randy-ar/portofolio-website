@@ -54,7 +54,7 @@ switch ($request) {
 
     case '/admin/sosmed/create':
         $controller = new SosmedController();
-        $controller->index();
+        $controller->create();
         break;
 
     case '/admin/sosmed/store':
@@ -103,6 +103,13 @@ switch ($request) {
     case '/admin/skills/delete':
         if(isset($_GET['id'])){
             $controller = new SkillsController();
+            $controller->delete();
+        }
+        break;
+
+    case '/admin/sosmed/delete':
+        if(isset($_GET['id'])){
+            $controller = new SosmedController();
             $controller->delete();
         }
         break;
