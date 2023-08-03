@@ -14,17 +14,25 @@
     <div class="col-10 mt-5">
       <div class="card text-bg-dark">
         <div class="card-header">
-          <h4>Create Portofolio</h4>
+          <h4>Create Portofolio </h4>
         </div>
-        <form action="/admin/skills/store" method="post" enctype="multipart/form-data">
+        <form action="/admin/porto_folio/store" method="post" enctype="multipart/form-data">
         <div class="card-body">
           <div class="mb-3">
-            <label for="name" class="form-label">Name</label>
-            <input type="text" name="name" id="name" class="form-control">
+            <label for="name" class="form-label">Judul</label>
+            <input type="text" name="judul" id="judul" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label for="name" class="form-label">Deskripsi</label>
+            <input type="text" name="deskripsi" id="deskripsi" class="form-control">
           </div>
           <div class="mb-3">
             <label for="image" class="form-label">Image</label>
             <input type="file" name="image" id="image" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label for="name" class="form-label">link</label>
+            <input type="text" name="link" id="link" class="form-control">
           </div>
         </div>
         <div class="card-footer text-end">

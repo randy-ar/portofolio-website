@@ -58,15 +58,108 @@ switch ($request) {
         $controller->index();
         break;    
     
+//skill
+    case '/admin/skills/create':
+        $controller = new SkillsController();
+        $controller->create();
+        break;
+    case '/admin/skills/store':
+        $controller = new SkillsController();
+        $controller->store();
+        break;
+    case '/admin/skills/edit':
+        if(isset($_GET['id'])){
+            $controller = new SkillsController();
+            $controller->edit();
+        }
+        break;
+    case '/admin/skills/update':
+        if(isset($_GET['id'])){
+            $controller = new SkillsController();
+            $controller->update();
+        }
+        break;    
+    case '/admin/skills/delete':
+        if(isset($_GET['id'])){
+            $controller = new SkillsController();
+            $controller->delete();
+        }
+        break;
+
+
+//sosmed
+    case '/admin/sosmed/create':
+        $controller = new SosmedController();
+        $controller->index();
+        break;
+    case '/admin/sosmed/store':
+        $controller = new SosmedController();
+        $controller->store();
+        break;
+    case '/admin/sosmed/edit':
+        if(isset($_GET['id'])){
+            $controller = new SosmedController();
+            $controller->edit();
+        }
+        break;
+    case '/admin/sosmed/update':
+        if(isset($_GET['id'])){
+            $controller = new SosmedController();
+            $controller->update();
+        }
+        break;
+
+
+//portofolio
     case '/admin/porto_folio/create':
         $controller = new porto_folioController();
-        $controller->index();
+        $controller->create();
         break;    
-
     case '/admin/porto_folio/store':
         $controller = new porto_folioController();
         $controller->store();
         break;
+    case '/admin/porto_folio/edit':
+        if(isset($_GET['id'])){
+            $controller = new porto_folioController();
+            $controller->edit();
+        }
+        break;
+    case '/admin/porto_folio/update':
+        if(isset($_GET['id'])){
+            $controller = new porto_folioController();
+            $controller->update();
+        }
+        break;    
+    case '/admin/porto_folio/delete':
+        if(isset($_GET['id'])){
+        $controller = new porto_folioController();
+        $controller->delete();
+        }
+        break;
+
+
+
+
+
+
+
+            
+
+    
+    case '/admin/porto_folio/create':
+        $controller = new porto_folioController();
+        $controller->create();
+        break;    
+
+
+    
+    case '/admin/porto_folio/store':
+        $controller = new porto_folioController();
+        $controller->store();
+        break;
+
+
 
     case '/admin/porto_folio/edit':
         if(isset($_GET['id'])){
@@ -75,74 +168,9 @@ switch ($request) {
         }
         break;
 
-        case '/admin/porto_folio/update':
-            if(isset($_GET['id'])){
-                $controller = new porto_folioController();
-                $controller->update();
-            }
-            break;
-        
-        case '/admin/porto_folio/delete':
-            if(isset($_GET['id'])){
-                $controller = new porto_folioController();
-                $controller->delete();
-            }
-            break;
 
-    case '/admin/sosmed/create':
-        $controller = new SosmedController();
-        $controller->index();
-        break;
 
-    case '/admin/sosmed/store':
-        $controller = new SosmedController();
-        $controller->store();
-        break;
 
-    case '/admin/sosmed/edit':
-        if(isset($_GET['id'])){
-            $controller = new SosmedController();
-            $controller->edit();
-        }
-        break;
-            
-    case '/admin/skills/create':
-        $controller = new SkillsController();
-        $controller->create();
-        break;
-
-    case '/admin/skills/store':
-        $controller = new SkillsController();
-        $controller->store();
-        break;
-
-    case '/admin/skills/edit':
-        if(isset($_GET['id'])){
-            $controller = new SkillsController();
-            $controller->edit();
-        }
-        break;
-
-    case '/admin/sosmed/update':
-        if(isset($_GET['id'])){
-            $controller = new SosmedController();
-            $controller->update();
-        }
-        break;
-
-    case '/admin/skills/update':
-        if(isset($_GET['id'])){
-            $controller = new SkillsController();
-            $controller->update();
-        }
-        break;
-    
-    case '/admin/skills/delete':
-        if(isset($_GET['id'])){
-            $controller = new SkillsController();
-            $controller->delete();
-        }
-        break;
         
 
     default:

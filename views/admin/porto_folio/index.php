@@ -27,23 +27,26 @@
                 <table class="table table-bordered table-responsive table-stripped table-dark table-hover w-100" style="white-space: nowrap;">
                 <tr>
                     <th width="1%">No</th>
-                    <th>Nama</th>
-                    <th>Image</th>
-                    <th>Action</th>
+                    <th>Judul</th>
+                    <th>Deskripsi</th>
+                    <th>image</th>
+                    <th>link</th>
                 </tr>
                 <?php
                     require_once $_SERVER['DOCUMENT_ROOT'].'/models/porto_folio.php';
-                    $list_skill = Skill::all();
+                    $list_porto_folio = porto_folio::all();
                     $no = 1;
-                    foreach ($list_skill as $skill) {
+                    foreach ($list_porto_folio as $porto_folio) {
                         echo '
                         <tr>
                             <td widtd="1%">'.$no.'</td>
-                            <td>'.$skill->name.'</td>
-                            <td><img src="'.$skill->getImage().'" style="width: 100px;"></td>
+                            <td>'.$porto_folio->judul.'</td>
+                            <td>'.$porto_folio->deskripsi.'</td>
+                            <td><img src="'.$porto_folio->getImage().'" style="width: 100px;"></td>
+                            <td>'.$porto_folio->link.'</td>
                             <td class="text-center">
-                                <a href="/admin/skills/edit?id='.$skill->id.'" class="btn btn-outline-success">Edit <i class="ri-edit-box-line"></i></a>
-                                <a href="/admin/skills/delete?id='.$skill->id.'" class="btn btn-outline-danger" onclick="return confirm(`Hapus data ini? data yang telah dihapus tidak dapat dikembalikan.`);">Delete <i class="ri-delete-bin-2-line"></i></a>
+                                <a href="/admin/porto_folio/edit?id='.$porto_folio->id.'" class="btn btn-outline-success">Edit <i class="ri-edit-box-line"></i></a>
+                                <a href="/admin/porto_folio/delete?id='.$porto_folio->id.'" class="btn btn-outline-danger" onclick="return confirm(`Hapus data ini? data yang telah dihapus tidak dapat dikembalikan.`);">Delete <i class="ri-delete-bin-2-line"></i></a>
                             </td>
                         </tr>
                         ';

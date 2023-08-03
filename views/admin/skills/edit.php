@@ -28,7 +28,7 @@
           </div>
           <div class="mb-3">
             <label for="name" class="form-label">Name</label>
-            <input type="text" value="<?php echo $skill->name ?>" name="name" id="name" class="form-control">
+            <input type="texta" value="<?php echo $skill->name ?>" name="name" id="name" class="form-control">
           </div>
           <div class="mb-3">
             <label for="image" class="form-label">Image</label>

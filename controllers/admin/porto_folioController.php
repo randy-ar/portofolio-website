@@ -20,17 +20,17 @@ class porto_folioController{
     $judul = isset($_POST['judul']) ? $_POST['judul'] : null;
     $deskripsi = isset($_POST['deskripsi']) ? $_POST['deskripsi'] : null;
     $image = isset($_FILES['image']) ? $_FILES['image'] : null;
-    $deskripsi = isset($_POST['link']) ? $_POST['link'] : null;
+    $link = isset($_POST['link']) ? $_POST['link'] : null;
     // var_dump($name, $image, $_FILES); die;
     if(!empty($image)){
-      $filePath = $image['tmp_name'];
-      $fileName = $image['name'];
+      $filePath = $image['tmp_judul'];
+      $fileName = $image['judul'];
       $dir = 'assets/img/logo/';
       $upload = move_uploaded_file($filePath, $dir.$fileName);
       if($upload){
         porto_folio::create([
           'judul' => $judul,
-          'deksripsi' => $deskripsi,
+          'deskripsi' => $deskripsi,
           'image' =>  $dir.$fileName,
           'link' => $link
         ]);
@@ -58,8 +58,8 @@ class porto_folioController{
           if(!empty($porto_folio->getFileImage())){
             unlink($porto_folio->getFileImage());
           }
-          $filePath = $image['tmp_name'];
-          $fileName = $image['name'];
+          $filePath = $image['tmp_judul'];
+          $fileName = $image['judul'];
           $dir = 'assets/img/logo/';
           $upload = move_uploaded_file($filePath, $dir.$fileName);
           if($upload){
