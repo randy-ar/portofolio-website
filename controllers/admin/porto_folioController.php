@@ -58,9 +58,9 @@ class porto_folioController{
           if(!empty($porto_folio->getFileImage())){
             unlink($porto_folio->getFileImage());
           }
-          $filePath = $image['tmp_judul'];
-          $fileName = $image['judul'];
-          $dir = 'assets/img/logo/';
+          $filePath = $image['tmp_name'];
+          $fileName = $image['name'];
+          $dir = 'assets/img/portofolio/';
           $upload = move_uploaded_file($filePath, $dir.$fileName);
           if($upload){
             $porto_folioImage = $dir.$fileName;
@@ -74,7 +74,7 @@ class porto_folioController{
           'link' => $link
         ]);
       }
-      return header('Location: /admin/porto_folio/edit?id='.$id);
+      return header('Location: /admin/porto_folio');
     }
     return header('Location: /admin/porto_folio');
   }
