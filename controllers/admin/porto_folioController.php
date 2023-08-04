@@ -23,9 +23,9 @@ class porto_folioController{
     $link = isset($_POST['link']) ? $_POST['link'] : null;
     // var_dump($name, $image, $_FILES); die;
     if(!empty($image)){
-      $filePath = $image['tmp_judul'];
-      $fileName = $image['judul'];
-      $dir = 'assets/img/logo/';
+      $filePath = $image['tmp_name'];
+      $fileName = $image['name'];
+      $dir = 'assets/img/portofolio/';
       $upload = move_uploaded_file($filePath, $dir.$fileName);
       if($upload){
         porto_folio::create([

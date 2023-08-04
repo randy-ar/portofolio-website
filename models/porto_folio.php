@@ -38,7 +38,7 @@ class porto_folio{
     $SQL = "INSERT INTO `porto_folio` (`judul`,`deskripsi`,`image`,`link`) VALUES ('".$data['judul']."','".$data['deskripsi']."', '".$data['image']."','".$data['link']."')";
     mysqli_query($conn, $SQL);
 
-    $SQL = "SELECT * FROM `porto_folio` WHERE id = (SELECT MAX(porto_folios.id) FROM porto_folio)";
+    $SQL = "SELECT * FROM `porto_folio` WHERE id = (SELECT MAX(porto_folio.id) FROM porto_folio)";
     $result = mysqli_query($conn, $SQL);
     $row = mysqli_fetch_row($result);
     list($id, $judul,$deskripsi, $image,$link) = $row;
