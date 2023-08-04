@@ -17,7 +17,7 @@
 </style>
 
 </head>
-<body class="bg-dark text-light">
+<body class="bg-dark text-light overflow-hidden">
 
 <?php 
 if(isset($_SESSION['failed'])){

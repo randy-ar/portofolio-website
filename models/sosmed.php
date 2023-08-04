@@ -24,6 +24,7 @@ class sosmed{
   }
 
   public function getFileImage(){
+    // var_dump($_SERVER['DOCUMENT_ROOT'].'/'.$this->icon); die;
     if(is_file($_SERVER['DOCUMENT_ROOT'].'/'.$this->icon)){
       return $_SERVER['DOCUMENT_ROOT'].'/'.$this->icon;
     }else{
@@ -34,7 +35,7 @@ class sosmed{
   public static function create($data){
     $conn = (new Model)->connect();
 
-    $SQL = "INSERT INTO `sosial_media` (`Nama`, `Icon`) VALUES ('".$data['Nama']."', '".$data['Icon']."')";
+    $SQL = "INSERT INTO `sosial_media` (`Nama`, `Icon`, `Link`) VALUES ('".$data['Nama']."', '".$data['Icon']."', '".$data['Link']."')";
     mysqli_query($conn, $SQL);
 
     $SQL = "SELECT * FROM `sosial_media` WHERE id = (SELECT MAX(sosial_media.id) FROM sosial_media)";
@@ -51,7 +52,7 @@ class sosmed{
     $data['Nama'] = (!empty($data['Nama'])) ? $data['Nama'] : $this->nama;
     $data['Icon'] = (!empty($data['Icon'])) ? $data['Icon'] : $this->icon;
 
-    $SQL = "UPDATE `sosial_media` SET `Nama` = '".$data['Nama']."', `Icon` = '".$data['Icon']."' WHERE id = ".$this->id;
+    $SQL = "UPDATE `sosial_media` SET `Nama` = '".$data['Nama']."', `Link` = '".$data['Link']."' WHERE id = ".$this->id;
     mysqli_query($conn, $SQL);
 
     $this->icon = $data['Icon'];

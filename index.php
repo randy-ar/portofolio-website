@@ -56,9 +56,9 @@ switch ($request) {
     case '/admin/porto_folio':
         $controller = new porto_folioController();
         $controller->index();
-        break;    
-    
-//skill
+        break;
+
+//skill            
     case '/admin/skills/create':
         $controller = new SkillsController();
         $controller->create();
@@ -85,7 +85,7 @@ switch ($request) {
             $controller->delete();
         }
         break;
-
+        
 
 //sosmed
     case '/admin/sosmed/create':
@@ -137,40 +137,6 @@ switch ($request) {
         $controller->delete();
         }
         break;
-
-
-
-
-
-
-
-            
-
-    
-    case '/admin/porto_folio/create':
-        $controller = new porto_folioController();
-        $controller->create();
-        break;    
-
-
-    
-    case '/admin/porto_folio/store':
-        $controller = new porto_folioController();
-        $controller->store();
-        break;
-
-
-
-    case '/admin/porto_folio/edit':
-        if(isset($_GET['id'])){
-            $controller = new porto_folioController();
-            $controller->edit();
-        }
-        break;
-
-
-
-
         
 
     default:
