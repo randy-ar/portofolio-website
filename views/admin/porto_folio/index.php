@@ -16,7 +16,7 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="col-6">
-                            <h4>Portifolio</h4>
+                            <h4>Portofolio</h4>
                         </div>
                         <div class="col-6 text-md-end">
                             <a href="/admin/porto_folio/create" class="btn btn-outline-light">Create <i class="ri-add-fill"></i></a>
