@@ -11,20 +11,48 @@ class AuthController{
     }
 
     public function login(){
-        if(isset($_POST['email'])){
-            $email = $_POST['email'];
+        
+        if (isset($_POST['email'])) {
+            $email = urldecode($_POST['email']);
             $password = $_POST['password'];
-            if(!empty($email)){
-                if($email == 'admin@gmail.com' && $password == '12341234'){
+            $remember = isset($_POST['remember']);
+        
+            if (!empty($email)) {
+                if ($email === 'admin@gmail.com' && $password === '12341234') {
+                    if ($remember) {
+                        $expiration_time = time() + (7 * 24 * 60 * 60);
+                        setcookie('admin_email', hash('sha256', $email), $expiration_time, '/');
+                        setcookie('admin_password', hash('sha256', $password), $expiration_time, '/');
+                    }
+                    $_SESSION['login'] = true;
                     return header('Location: /admin/dashboard');
-                }else{
+                } else {
                     $_SESSION['failed'] = "Login gagal dilakukan, periksa kembali akun anda.";
                     return header('Location: ' . $_SERVER['HTTP_REFERER']);
                 }
-            }else{
+            } else {
+                if (isset($_COOKIE['admin_email']) && isset($_COOKIE['admin_password'])) {
+                    $cookie_email = $_COOKIE['admin_email'];
+                    $cookie_password = $_COOKIE['admin_password'];
+                    if ($cookie_email === hash('sha256', 'admin@gmail.com') && $cookie_password === hash('sha256', '12341234')) {
+                        $_SESSION['login'] = true;
+                        return header('Location: /admin/dashboard');
+                    }
+                }
+        
                 $_SESSION['failed'] = "Isian Email tidak boleh kosong.";
                 return header('Location: ' . $_SERVER['HTTP_REFERER']);
             }
         }
+    }        
+
+    public function logout() {
+        session_start();
+        session_destroy();
+
+        setcookie('admin', '', time() - 3600, '/');
+
+        header('Location: /login');
+        exit();
     }
 }
