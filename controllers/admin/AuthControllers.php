@@ -8,8 +8,10 @@ class AuthController{
 
     public function viewLogin(){ 
         // var_dump($_COOKIE); die;
-        if(isset($_COOKIE['admin_email']) && isset($_COOKIE['admin_password'])){
-            return header('Location: /admin/dashboard');
+        if(isset($_COOKIE['login'])){
+            if($_COOKIE['login']=='true'){
+                return header('Location: /admin/dashboard');
+            }
         }else{
             require $this->root. '/views/admin/auth/login.php';
         }
@@ -31,9 +33,12 @@ class AuthController{
         
             if (!empty($email)) {
                 if ($email === 'admin@gmail.com' && $password === '12341234') {
-                    $_SESSION['login'] = true;
+                    $_COOKIE['login'] = 'true';
                     if($remember){
                         setcookie('login','true');
+                    }else{
+                        $expiration_time = time() + (7 * 24 * 60 * 60);
+                        setcookie('login', 'true', $expiration_time, '/');
                     }
                     return header('Location: /admin/dashboard');
                 } else {
@@ -61,10 +66,9 @@ class AuthController{
         session_destroy();
 
         // setcookie('admin', '', time() - 3600, '/');
-        if(isset($_COOKIE['admin_email']) && $_COOKIE['admin_password']){
-            unset($_COOKIE['admin_email']); 
-            unset($_COOKIE['admin_password']); 
-            setcookie('admin_email', '', time() - 3600, '/'); 
+        if(isset($_COOKIE['login'])){
+            unset($_COOKIE['login']); 
+            setcookie('login', '', time() - 3600, '/'); 
             setcookie('admin_password', '', time() - 3600, '/'); 
         }
         header('Location: /login');

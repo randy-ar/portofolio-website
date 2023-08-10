@@ -23,7 +23,7 @@
         </button>
         <ul>
           <?php 
-            if(isset($_COOKIE['admin_email']) && isset($_COOKIE['admin_password'])){
+            if(isset($_COOKIE['login'])){
               echo "<li><a href='/admin/dashboard'>Dashboard</a></li>";
             }else{
               echo "<li><a href='/login'>Login</a></li>";
