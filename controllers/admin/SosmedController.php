@@ -1,5 +1,6 @@
 <?php
 require $_SERVER['DOCUMENT_ROOT'].'/models/sosmed.php';
+// require $_SERVER['DOCUMENT_ROOT'].'/models/Setting.php';
 
 class SosmedController{
   public $root;
@@ -9,6 +10,7 @@ class SosmedController{
   }
   public function index(){
     $list_sosmed = sosmed::all();
+    $app_setting = AppSetting::first();
     include($this->root.'/views/admin/sosmed/index.php');
   }
   public function create(){
@@ -18,6 +20,7 @@ class SosmedController{
     $id = $_GET['id'];
     if(!empty($id)){
       $sosmed = sosmed::find($id);
+      // var_dump($sosmed);
       include $this->root.'/views/admin/sosmed/edit.php';
     }else{
       return header('Location: /admin/sosmed/');

@@ -30,10 +30,11 @@ class SkillsController{
           'name' => $name,
           'image' =>  $dir.$fileName
         ]);
-        return header('Location: /admin/skills');
       }
+    }else{
+      return header('Location: /admin/skills/create');
     }
-    return header('Location: /admin/skills/create');
+    return header('Location: /admin/skills');
   }
 
   public function update(){
@@ -67,7 +68,6 @@ class SkillsController{
           'image' => $skillImage
         ]);
       }
-      return header('Location: /admin/skills/edit?id='.$id);
     }
     return header('Location: /admin/skills');
   }

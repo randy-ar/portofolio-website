@@ -7,7 +7,12 @@ class AuthController{
     }
 
     public function viewLogin(){ 
-        require $this->root. '/views/admin/auth/login.php';
+        // var_dump($_COOKIE); die;
+        if(isset($_COOKIE['admin_email']) && isset($_COOKIE['admin_password'])){
+            return header('Location: /admin/dashboard');
+        }else{
+            require $this->root. '/views/admin/auth/login.php';
+        }
     }
 
     public function login(){
@@ -50,8 +55,13 @@ class AuthController{
         session_start();
         session_destroy();
 
-        setcookie('admin', '', time() - 3600, '/');
-
+        // setcookie('admin', '', time() - 3600, '/');
+        if(isset($_COOKIE['admin_email']) && $_COOKIE['admin_password']){
+            unset($_COOKIE['admin_email']); 
+            unset($_COOKIE['admin_password']); 
+            setcookie('admin_email', '', time() - 3600, '/'); 
+            setcookie('admin_password', '', time() - 3600, '/'); 
+        }
         header('Location: /login');
         exit();
     }

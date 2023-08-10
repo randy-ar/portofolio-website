@@ -15,6 +15,13 @@
 	font-weight: 400;
 }
 
+:root{
+  --light: #FAF8FF;
+  --gray: #BCBCBC;
+  --dark: #0c0c0c;
+  --main: #121212;
+}
+
 /************ Default Css ************/
 * {
   margin: 0;
@@ -31,8 +38,8 @@ body {
   font-weight: 400;
   overflow-x: hidden;
   position: relative;
-  background-color: #121212 !important;
-  color: #fff !important;
+  background-color: var(--main) !important;
+  color: var(--light) !important;
   font-family: 'Centra', sans-serif !important;
 }
 
@@ -87,12 +94,12 @@ p.danger {
 }
 
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px #121212;
+  box-shadow: inset 0 0 5px var(--main);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #fff;
+  background: var(--light);
   border-radius: 10px;
 }
 
@@ -108,7 +115,7 @@ nav{
   transition: all .3s;
 }
 .scrolled{
-  background-color: #121212;
+  background-color: var(--main);
 }
 .nav-fixed{
   position: fixed;
@@ -124,7 +131,7 @@ nav ul{
 }
 nav ul li a{
   opacity: .75;
-  color: #fff;
+  color: var(--light);
   font-weight: 400;
   font-size: 18px;
   letter-spacing: 0.8px;
@@ -142,18 +149,18 @@ nav .social-media-wrapper .social-media{
   height: 40px;
   padding: 0;
   margin: 0;
-  border: solid 1px #fff;
+  border: solid 1px var(--light);
   border-radius: 50%;
   opacity: .75;
 }
 nav .social-media-wrapper .social-media:hover{
   opacity: 1;
 }
-nav .social-media-wrapper .social-media:hover a{
-  font-size: 24px;
+nav .social-media-wrapper .social-media:hover img{
+  height: 25px;
 }
 nav .social-media-wrapper .social-media a{
-  color: #fff;
+  color: var(--light);
   font-size: 22px;
   display: flex;
   justify-content: center;
@@ -161,6 +168,12 @@ nav .social-media-wrapper .social-media a{
   height: 100%;
   width: 100%;
   transition: all .3s;
+}
+
+.social-media img{
+  width: auto;
+  height: 23px;
+  transition: all .2s;
 }
 
 nav .navmenu{
@@ -173,7 +186,7 @@ nav .nav-toggler{
   color: white;
   font-size: 22px;
   border: 1px solid;
-  border-color: #ffffffcc;
+  border-color: var(--light)fffcc;
   border-radius: 50%;
   height: 40px;
   width: 40px;
@@ -185,7 +198,7 @@ nav .nav-toggler{
 }
 
 nav .nav-toggler:hover{
-  border-color: #fff;
+  border-color: var(--light);
   font-size: 24px;
 }
 
@@ -235,14 +248,14 @@ nav .nav-toggler:hover{
   display: block;
 }
 .banner p {
-  color: #B8B8B8;
+  color: var(--gray);
   font-size: 18px;
   letter-spacing: 0.8px;
   line-height: 1.5em;
   width: 96%;
 }
 .banner a {
-  color: #fff;
+  color: var(--light);
   font-weight: 700;
   font-size: 20px;
   margin-top: 60px;
@@ -297,7 +310,7 @@ nav .nav-toggler:hover{
 	font-weight: 700;
 }
 .skill p {
-  color: #B8B8B8;
+  color: var(--gray);
   font-size: 18px;
   letter-spacing: 0.8px;
   line-height: 1.5em;
@@ -322,7 +335,7 @@ nav .nav-toggler:hover{
   width: 100%;
 }
 .bg-white{
-  background-color: #fff;
+  background-color: var(--light);
   opacity: .9;
   padding: 10px;
 }
@@ -337,7 +350,7 @@ nav .nav-toggler:hover{
 .project {
   padding: 80px 80px;
   position: relative;
-  background-color: black;
+  background-color: var(--dark);
 }
 .project h2 {
 	font-size: 45px;
@@ -345,7 +358,7 @@ nav .nav-toggler:hover{
   text-align: center;
 }
 .project p {
-  color: #B8B8B8;
+  color: var(--gray);
   font-size: 18px;
   letter-spacing: 0.8px;
   line-height: 1.5em;
@@ -400,7 +413,7 @@ nav .nav-toggler:hover{
   opacity: 1;
 }
 .proj-txtx a{
-  color: #B8B8B8;
+  color: var(--gray);
 }
 .proj-txtx a h4 {
   font-size: 30px;
@@ -466,7 +479,7 @@ nav .nav-toggler:hover{
   bottom: -20px;
   right: -20px;
   padding: 8px 30px;
-  color: #fff;
+  color: var(--light);
   font-family: Centra, serif;
   font-size: 20px;
   border-radius: 20px;
@@ -490,7 +503,7 @@ nav .nav-toggler:hover{
 .footer p {
   font-weight: 400;
   font-size: 14px;
-  color: #B8B8B8;
+  color: var(--gray);
   letter-spacing: 0.5px;
   margin-top: 20px;
 }
@@ -520,7 +533,7 @@ nav .nav-toggler:hover{
     height: min-content;
     top: 0;
     right: -110%;
-    background-color: #121212;
+    background-color: var(--main);
     padding: 18px 16px;
     border-top-left-radius: 16px;
     border-bottom-left-radius: 16px;
@@ -553,9 +566,10 @@ nav .nav-toggler:hover{
 
   .banner{
     width: 100%;
-    padding: 0 0 0 0;
+    padding: 0 0 100px 0;
+    /* margin-bottom: 50px; */
     background-position: center center;
-    height: 100vh;
+    height: auto;
   }
   .banner .tagline{
     font-size: 12px;
@@ -676,5 +690,17 @@ nav .nav-toggler:hover{
     font-size: 12px;
     bottom: -10px;
     right: -10px;
+  }
+
+  footer nav{
+    display: flex;
+    flex-direction: column;
+  }
+  footer nav .logo{
+    margin-bottom: 30px;
+  }
+  footer nav .navmenu{
+    display: flex;
+    flex-direction: column;
   }
 }

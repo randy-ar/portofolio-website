@@ -14,7 +14,10 @@ a {
       <a class="navbar-brand" href="#">PORTOFOLIO PANEL</a>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Basic Information</a>
+          <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="/admin/banner">Banner</a>
           </li>
           <li class="nav-item">
           <a class="nav-link" href="/admin/sosmed">Social Media</a>
@@ -29,7 +32,7 @@ a {
       </ul>
       <ul class="navbar-nav">
             <li class="nav-item ms-auto">
-            <button type="button" class="btn btn-outline-danger"><a href="/" >Log Out</a></button>
+            <button type="button" class="btn btn-outline-danger"><a href="/logout" >Log Out</a></button>
             </li>
           </ul>
       </div>

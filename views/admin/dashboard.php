@@ -9,9 +9,38 @@
 <body class="bg-dark text-light">
     <?php include $_SERVER['DOCUMENT_ROOT'].'/views/layouts/navbar.php' ?>
     <div class="container">
-        <div class="row">
-            <div class="col-10 mt-5">
-                
+        <div class="row mt-5 justify-content-center">
+            <div class="col-10">
+                <div class="row">
+                    <div class="col-6 mb-3">
+                        <div class="card text-light bg-dark">
+                            <div class="card-body">
+                                <h1>Banner</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 mb-3">
+                        <div class="card text-light bg-dark">
+                            <div class="card-body">
+                                <h1>Social Media</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 mb-3">
+                        <div class="card text-light bg-dark">
+                            <div class="card-body">
+                                <h1>Skills</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 mb-3">
+                        <div class="card text-light bg-dark">
+                            <div class="card-body">
+                                <h1>Portofolio</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

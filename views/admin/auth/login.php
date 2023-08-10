@@ -51,6 +51,7 @@ if(isset($_SESSION['failed'])){
                         <label for="password">Password</label>
                         <input type="password" name="password" id="password" class="form-control">
                     </div>
+                    <input type="hidden" name="remember" value="true">
                 </div>
 
                 <div class="card-footer text-end bg-dark text-light">

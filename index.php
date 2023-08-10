@@ -14,7 +14,7 @@ function includeDir($path) {
     foreach ($iterator as $file) {
         $fname = $file->getFilename();
         if (preg_match('%\.php$%', $fname)) {
-            include($file->getPathname());
+            include_once($file->getPathname());
         }
     }
 }
@@ -24,12 +24,17 @@ includeDir($root.'/controllers');
 switch ($request) {
     case '':
     case '/':
-        require __DIR__ . $viewHomeDir . 'index.php';
+        $controller = new HomeController();
+        $controller->index();
         break;
 
     case '/login':
         $controller = new AuthController();
         $controller->viewLogin();
+        break;
+    case '/logout':
+        $controller = new AuthController();
+        $controller->logout();
         break;
     
     case '/admin/login':
@@ -57,6 +62,21 @@ switch ($request) {
         $controller = new porto_folioController();
         $controller->index();
         break;
+
+//Banner
+    case '/admin/banner':
+        $controller = new BannerController();
+        $controller->index();
+        break;
+    case '/admin/banner/store':
+        $controller = new BannerController();
+        $controller->store();
+        break;
+    case '/admin/banner/delete':
+        $controller = new BannerController();
+        $controller->delete();
+        break;
+
 
 //skill            
     case '/admin/skills/create':
@@ -109,6 +129,11 @@ switch ($request) {
         }
         break;
 
+//app setting
+    case '/admin/app-setting/store':
+        $controller = new AppSettingController();
+        $controller->store();
+        break;
 
 //portofolio
     case '/admin/porto_folio/create':

@@ -10,8 +10,38 @@
   <?php include $_SERVER['DOCUMENT_ROOT'].'/views/layouts/navbar.php' ?>
 
   <div class="container">
+    <?php
+        if(isset($_SESSION['failed'])){
+        echo '
+        <div class="row justify-content-center mt-5">
+            <div class="col-8">
+                <div class="alert alert-danger" role="alert">
+                    '.$_SESSION['failed'].'
+                </div>
+            </div>
+        </div>
+        ';
+        session_unset();
+    }
+    ?>
       <div class="row justify-content-center">
           <div class="col-10 mt-5">
+            <div class="card text-light bg-dark mb-3">
+                <div class="card-header">
+                    <h4>Contact</h4>
+                </div>
+                <form action="/admin/app-setting/store" method="post">
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label for="nomor_whatsapp" class="form-label">Nomor Whatsapp</label>
+                        <input value="<?php echo $app_setting->nomor_whatsapp ?>" type="text" name="nomor_whatsapp" id="nomor_whatsapp" class="form-control">
+                    </div>
+                </div>
+                <div class="card-footer text-end">
+                    <button type="submit" class="btn btn-primary">Simpan <i class="ri-save-line"></i></button>
+                </div>
+                </form>
+            </div>
               <div class="card text-bg-dark">
                 <div class="card-header">
                     <div class="row">
