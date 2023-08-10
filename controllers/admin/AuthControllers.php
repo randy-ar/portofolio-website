@@ -11,20 +11,25 @@ class AuthController{
     }
 
     public function login(){
+
+        if(isset($_COOKIE['login'])){
+            if($_COOKIE['login']=='true'){
+                $_SESSION['login']=true;
+            }
+        }
         
         if (isset($_POST['email'])) {
             $email = urldecode($_POST['email']);
             $password = $_POST['password'];
             $remember = isset($_POST['remember']);
+            
         
             if (!empty($email)) {
                 if ($email === 'admin@gmail.com' && $password === '12341234') {
-                    if ($remember) {
-                        $expiration_time = time() + (7 * 24 * 60 * 60);
-                        setcookie('admin_email', hash('sha256', $email), $expiration_time, '/');
-                        setcookie('admin_password', hash('sha256', $password), $expiration_time, '/');
-                    }
                     $_SESSION['login'] = true;
+                    if($remember){
+                        setcookie('login','true');
+                    }
                     return header('Location: /admin/dashboard');
                 } else {
                     $_SESSION['failed'] = "Login gagal dilakukan, periksa kembali akun anda.";

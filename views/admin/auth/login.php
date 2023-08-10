@@ -51,9 +51,17 @@ if(isset($_SESSION['failed'])){
                         <label for="password">Password</label>
                         <input type="password" name="password" id="password" class="form-control">
                     </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="remember" name="remember" id="remember">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          Remember me
+                        </label>
+
+                    </div>           
                 </div>
 
                 <div class="card-footer text-end bg-dark text-light">
+         
                     <button type="submit" class="btn btn-outline-light"><a class=".link-unstyled"  href="/">Kembali</a></button>
                     <button type="submit" class="btn btn-outline-light">Submit</button>
                 </div>
