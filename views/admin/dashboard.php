@@ -17,8 +17,8 @@
                         <div class="card ">
                         <div class="card-body bg-dark">
                             <h5 class="card-title text-light">Banner</h5>
-                            <p class="card-text text-light">With supporting text below as a natural lead-in to additional content.</p>
-                            <a href="/admin/banner" class="btn btn-primary">Go somewhere</a>
+                            <p class="card-text text-light">Setting apa yang ingin anda tampilkan di halaman Banner.</p>
+                            <a href="/admin/banner" class="btn btn-primary">Masuk</a>
                         </div>
                         </div>
                     </div>
@@ -26,8 +26,8 @@
                         <div class="card">
                         <div class="card-body bg-dark">
                             <h5 class="card-title text-light">Social Media</h5>
-                            <p class="card-text ">With supporting text below as a natural lead-in to additional content.</p>
-                            <a href="/admin/sosmed" class="btn btn-primary">Go somewhere</a>
+                            <p class="card-text text-light">Setting apa yang ingin anda tampilkan di halaman Social Media.</p>
+                            <a href="/admin/sosmed" class="btn btn-primary">Masuk</a>
                         </div>
                         </div>
                     </div>
@@ -35,8 +35,8 @@
                         <div class="card">
                         <div class="card-body bg-dark">
                             <h5 class="card-title text-light">Skills</h5>
-                            <p class="card-text text-light">With supporting text below as a natural lead-in to additional content.</p>
-                            <a href="/admin/skills" class="btn btn-primary">Go somewhere</a>
+                            <p class="card-text text-light">Setting apa yang ingin anda tampilkan di halaman Skills.</p>
+                            <a href="/admin/skills" class="btn btn-primary">Masuk</a>
                         </div>
                         </div>
                     </div>
@@ -44,8 +44,8 @@
                         <div class="card">
                         <div class="card-body bg-dark">
                             <h5 class="card-title text-light">Portofolio</h5>
-                            <p class="card-text text-light">With supporting text below as a natural lead-in to additional content.</p>
-                            <a href="/admin/porto_folio" class="btn btn-primary">Go somewhere</a>
+                            <p class="card-text text-light">Setting apa yang ingin anda tampilkan di halaman Portofolio.</p>
+                            <a href="/admin/porto_folio" class="btn btn-primary">Masuk</a>
                         </div>
                         </div>
                     </div>
