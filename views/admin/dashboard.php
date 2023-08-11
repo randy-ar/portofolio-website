@@ -12,33 +12,43 @@
         <div class="row mt-5 justify-content-center">
             <div class="col-10">
                 <div class="row">
-                    <div class="col-6 mb-3">
-                        <div class="card text-light bg-dark">
-                            <div class="card-body">
-                                <h1>Banner</h1>
-                            </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="card ">
+                        <div class="card-body bg-dark">
+                            <h5 class="card-title text-light">Banner</h5>
+                            <p class="card-text text-light">With supporting text below as a natural lead-in to additional content.</p>
+                            <a href="/admin/banner" class="btn btn-primary">Go somewhere</a>
+                        </div>
                         </div>
                     </div>
-                    <div class="col-6 mb-3">
-                        <div class="card text-light bg-dark">
-                            <div class="card-body">
-                                <h1>Social Media</h1>
-                            </div>
+                    <div class="col-sm-6">
+                        <div class="card">
+                        <div class="card-body bg-dark">
+                            <h5 class="card-title text-light">Social Media</h5>
+                            <p class="card-text ">With supporting text below as a natural lead-in to additional content.</p>
+                            <a href="/admin/sosmed" class="btn btn-primary">Go somewhere</a>
+                        </div>
                         </div>
                     </div>
-                    <div class="col-6 mb-3">
-                        <div class="card text-light bg-dark">
-                            <div class="card-body">
-                                <h1>Skills</h1>
-                            </div>
+                    <div class="col-sm-6 mt-3">
+                        <div class="card">
+                        <div class="card-body bg-dark">
+                            <h5 class="card-title text-light">Skills</h5>
+                            <p class="card-text text-light">With supporting text below as a natural lead-in to additional content.</p>
+                            <a href="/admin/skills" class="btn btn-primary">Go somewhere</a>
+                        </div>
                         </div>
                     </div>
-                    <div class="col-6 mb-3">
-                        <div class="card text-light bg-dark">
-                            <div class="card-body">
-                                <h1>Portofolio</h1>
-                            </div>
+                    <div class="col-sm-6 mt-3" >
+                        <div class="card">
+                        <div class="card-body bg-dark">
+                            <h5 class="card-title text-light">Portofolio</h5>
+                            <p class="card-text text-light">With supporting text below as a natural lead-in to additional content.</p>
+                            <a href="/admin/porto_folio" class="btn btn-primary">Go somewhere</a>
                         </div>
+                        </div>
+                    </div>
                     </div>
                 </div>
             </div>
